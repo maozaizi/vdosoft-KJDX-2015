@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping>
+    <class name="com.baseorganization" table="SYS_BASE_ORGANIZATION">
+         <id name="id" type="java.lang.String">
+            <column name="id" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="orgName" type="java.lang.String">
+            <column name="org_name" length="100" />
+        </property>
+        <property name="parentId" type="java.lang.String">
+            <column name="parent_id" length="40" />
+        </property>
+        <property name="memo" type="java.lang.String">
+            <column name="memo" length="500" />
+        </property>
+        <property name="isValid" type="java.lang.String">
+            <column name="is_valid" length="1">
+                <comment>0有效 1无效</comment>
+            </column>
+        </property>
+        <property name="iLevel" type="java.lang.Long">
+            <column name="ilevel" precision="8" scale="0" />
+        </property>
+        <property name="orderby" type="java.lang.Long">
+            <column name="orderby" precision="8" scale="0" />
+        </property>
+        <property name="createUser" type="java.lang.String">
+            <column name="create_user" length="40" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="create_date" length="19" />
+        </property>
+        <property name="modifyUser" type="java.lang.String">
+            <column name="modify_user" length="40" />
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date" length="19" />
+        </property>
+		<property name="childList" type="java.util.List">
+            <column name="childList" />
+        </property>
+    </class>
+</hibernate-mapping>

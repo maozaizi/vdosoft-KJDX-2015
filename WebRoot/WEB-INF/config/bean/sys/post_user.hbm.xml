@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping>
+    <class name="com.PostUser" table="sys_post_user">
+        <id name="postUserId" type="java.lang.String">
+            <column name="post_user_id" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="postId" type="java.lang.String">
+            <column name="post_id" length="40" />
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id" length="40" />
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date" length="19" />
+        </property>
+        <property name="modifyUser" type="java.lang.String">
+            <column name="modify_user" length="40" />
+        </property>
+        <property name="createUser" type="java.lang.String">
+            <column name="create_user" length="40" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="create_date" length="19" />
+        </property>
+        <property name="isValid" type="java.lang.String">
+            <column name="is_valid" length="1">
+                <comment>0 无效 1 有效</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

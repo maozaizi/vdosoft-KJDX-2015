@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+/* 根据brick框架的分页，自己定义分页输入框部分样式
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+.form-paginator {
+  position: relative;
+  float:left;
+  margin-right:1px;
+  padding: 6px 12px;
+  height: 34px;
+  width: 72px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-paginator:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-paginator::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.form-paginator:-ms-input-placeholder {
+  color: #999;
+}
+.form-paginator::-webkit-input-placeholder {
+  color: #999;
+}
+.form-paginator[disabled],
+.form-paginator[readonly],
+fieldset[disabled] .form-paginator {
+  cursor: not-allowed;
+  background-color: #eee;
+  opacity: 1;
+}

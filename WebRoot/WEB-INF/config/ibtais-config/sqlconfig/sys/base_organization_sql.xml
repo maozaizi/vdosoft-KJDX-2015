@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap 
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+	<select id="queryChild" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from sys_base_organization where is_valid = '1' and base_organization_id like #baseOrganizationId#||'%'  and base_organization_id != #baseOrganizationId#
+	</select>
+	
+	<!-- 获取人员管理的组织树 -->
+	<select id="getBureauTree" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from sys_base_organization where is_valid = '1' and parent_id = #parentId#
+	</select>
+	
+	<!-- 日志查询 -->
+	<select id="getLogRecord" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+	    select t.* from log_record t where 1=1 order by t.operator_time desc 
+	</select>
+</sqlMap>

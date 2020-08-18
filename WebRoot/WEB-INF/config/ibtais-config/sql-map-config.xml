@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig 
+	PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" 
+	"http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<!-- 系统sql 开始 -->
+		<sqlMap resource="/WEB-INF/config/ibtais-config/sqlconfig/sys/user_sql.xml"/>
+		<sqlMap resource="/WEB-INF/config/ibtais-config/sqlconfig/sys/auth_sql.xml"/>
+		<sqlMap resource="/WEB-INF/config/ibtais-config/sqlconfig/sys/auth_group_sql.xml"/> 
+		<sqlMap resource="/WEB-INF/config/ibtais-config/sqlconfig/sys/base_organization_sql.xml"/>
+		<!-- 数据字典sql -->
+		<sqlMap resource="/WEB-INF/config/ibtais-config/sqlconfig/sys/dictionary_sql.xml"/>
+	<!-- 系统sql 结束 -->
+	
+		<sqlMap resource="/WEB-INF/config/ibtais-config/sqlconfig/sys/project_sql.xml"/>
+</sqlMapConfig>

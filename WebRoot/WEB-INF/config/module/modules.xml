@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+
+	<!-- 系统module 开始 -->
+		<module location="/WEB-INF/config/module/sys/usergroup.xml"></module>
+		<module location="/WEB-INF/config/module/sys/user.xml"></module>
+		<module location="/WEB-INF/config/module/sys/auth.xml"></module>
+		<module location="/WEB-INF/config/module/sys/authgroup.xml"></module>
+	<!-- 系统module 结束 -->
+
+	
+	<!-- 基础module 开始 -->
+		<!-- 基础组织结构 -->
+		<module location="/WEB-INF/config/module/sys/baseorganization.xml"></module>
+		<!-- 应用组织结构 -->
+		<module location="/WEB-INF/config/module/sys/org.xml"></module>
+		<!-- 选择组织结构树人员或者岗位 -->
+		<module location="/WEB-INF/config/module/sys/orgSelect.xml"></module>
+		<!-- 数据字典 -->
+		<module location="/WEB-INF/config/module/sys/dictionary.xml"></module>
+	<!-- 基础module 结束 -->
+	
+		<module location="/WEB-INF/config/module/sys/project.xml"></module>
+		<!-- 上传组件modules -->
+		<module location="/WEB-INF/config/module/common/fileupload/fileupload.xml"></module>
+</modules>

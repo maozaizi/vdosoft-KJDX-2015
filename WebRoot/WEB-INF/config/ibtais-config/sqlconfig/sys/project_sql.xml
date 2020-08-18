@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap 
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+	<select id="getprojectList" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from project_info where is_valid = '1'
+		<isNotEmpty prepend="and" property="projectcode">
+				projectcode = #projectcode# 
+		</isNotEmpty>	
+		<isNotEmpty prepend="and" property="projectname">
+				projectname = #projectname# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="college">
+				college = #college# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="dutyperson">
+				dutyperson = #dutyperson# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fintotal">
+				fintotal = #fintotal# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="pzNo">
+				projectname = #pzNo# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="feeType">
+				feeType = #feeType# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="othertype">
+				othertype = #othertype# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="projectLevel">
+				projectLevel = #projectLevel# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="planType">
+				planType = #planType# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="projectlevelid">
+				projectlevelid = #projectlevelid# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="isFollow">
+				isfollow = #isFollow# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="plantypeid">
+				plantypeid = #plantypeid# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="samount">
+				amount &gt;= #samount# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="eamount">
+				amount &lt;= #eamount# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="builddate">
+				builddate = #builddate# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="starttime">
+			'$starttime$'  &lt;= allotdate
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="endtime">
+			'$endtime$'  &gt;= allotdate
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="ids">
+			id in
+				<iterate open="(" close=")" conjunction="," property="ids" >
+                #ids[]#
+            </iterate>
+		</isNotEmpty>
+		order by inyear desc,xuhao desc
+	</select>
+	<select id="getprojectListasc" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from project_info where is_valid = '1'
+		<isNotEmpty prepend="and" property="projectcode">
+				projectcode = #projectcode# 
+		</isNotEmpty>	
+		<isNotEmpty prepend="and" property="projectname">
+				projectname = #projectname# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="college">
+				college = #college# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="dutyperson">
+				dutyperson = #dutyperson# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fintotal">
+				fintotal = #fintotal# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="pzNo">
+				projectname = #pzNo# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="feeType">
+				feeType = #feeType# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="othertype">
+				othertype = #othertype# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="projectLevel">
+				projectLevel = #projectLevel# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="planType">
+				planType = #planType# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="projectlevelid">
+				projectlevelid = #projectlevelid# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="isFollow">
+				isfollow = #isFollow# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="plantypeid">
+				plantypeid = #plantypeid# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="samount">
+				amount &gt;= #samount# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="eamount">
+				amount &lt;= #eamount# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="builddate">
+				builddate = #builddate# 
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="starttime">
+			'$starttime$'  &lt;= allotdate
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="endtime">
+			'$endtime$'  &gt;= allotdate
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="ids">
+			id in
+				<iterate open="(" close=")" conjunction="," property="ids" >
+                #ids[]#
+            </iterate>
+		</isNotEmpty>
+		order by xuhao,fintotal asc
+	</select>
+	
+	<select id="getLogList" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from  LOG_RECORD
+			
+	</select>
+	
+	<select id="getDatasByName" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from sys_data_item where is_valid = '1'
+		and parent_id in (select data_item_id from sys_data_item where data_item_name = #dataItemName#)
+			
+	</select>
+	<select id="getDataItemByName" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from sys_data_item where is_valid = '1'
+		and  data_item_name = #dataItemName#
+		<isNotEmpty prepend="and" property="parentid">
+		  parent_id = #parentid#
+		</isNotEmpty>
+	</select>
+	<select id="getMaxProjectNum" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select data_item_id as id,parent_id as parentid, data_item_value as xuhao from sys_data_item where is_valid = '1' 
+		and parent_id in (select data_item_id from sys_data_item where data_item_code = 'projectsort')	
+		and data_item_name = #dataItemName#
+	</select>
+	
+	<select id="getDatasByYear" parameterClass="com.brick.data.IMap" resultClass="java.util.HashMap">
+		select * from sys_data_item where is_valid = '1'
+		and parent_id = #dataItemId# and data_item_name = #dataItemName#
+			
+	</select>
+	
+</sqlMap>

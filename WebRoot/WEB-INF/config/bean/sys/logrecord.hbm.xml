@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping>
+    <class name="com.LogRecord" table="LOG_RECORD">
+        <id name="logRecordId" type="java.lang.String">
+            <column name="id" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="operatorTime" type="java.util.Date">
+            <column name="operator_time" length="19" />
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id" length="40" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name" length="30" />
+        </property>
+        <property name="reason" type="java.lang.String">
+            <column name="reason" length="500" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

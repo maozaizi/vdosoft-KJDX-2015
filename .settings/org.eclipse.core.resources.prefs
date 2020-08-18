@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/config/bean/sys/baseorganization/baseorganization.hbm.xml=UTF-8
+encoding//WebRoot/WEB-INF/config/bean/sys/userinfo.hbm.xml=UTF-8
+encoding//WebRoot/js/jquery.1.7.2.min.js=UTF-8
+encoding//WebRoot/js/jquery.min.js=UTF-8
+encoding//WebRoot/js/public.js=UTF-8
+encoding//WebRoot/js/regexp.js=UTF-8
+encoding//WebRoot/js/strutils.js=UTF-8
+encoding//WebRoot/js/webcalendar.js=UTF-8
+encoding//src/com/u2a/framework/service/business/ProjectService.java=UTF-8
+encoding/<project>=UTF-8

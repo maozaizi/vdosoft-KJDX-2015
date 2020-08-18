@@ -1,0 +1,588 @@
+/*!
+易订宝前台页面样式 v0.2.0
+Copyright 2014 vdosoft!
+by @maozaizi
+*/
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+ol,ul {
+	list-style: none
+}
+
+a {
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden; /* 抹掉a标签按钮最上面的小点, 消除了元素中怪异的错行问题  */   
+}
+
+.bg-sprite {
+	background-image: url("../img/img_ui_v616.png");
+	background-repeat: no-repeat;	
+}
+
+.site-row {
+	width: 100%;
+}
+
+.site-row:after {
+    content: "";
+	display: table;
+	clear: both
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   顶部菜单
+   ========================================================================== */
+
+.site-nav {
+    z-index: 10000;
+	width: 100%;
+	background: #e6e6e6;
+	border-bottom: 1px solid #e1e1e1;
+	*zoom: 1
+}
+.site-nav:after {
+    content: "";
+	display: table;
+	clear: both
+}
+.site-nav .site-nav-bd {
+    margin: 0 auto;
+	width: 1200px;
+	height: 35px;
+	background: #e6e6e6;
+	-webkit-backface-visibility: hidden;
+	*zoom: 1
+}
+.site-nav .site-nav-bd:after {
+	content: "";
+	display: table;
+	clear: both
+}
+.site-nav .site-nav-bd .site-nav-bd-l,
+.site-nav .site-nav-bd .site-nav-bd-l .menu,
+.site-nav .site-nav-bd .site-nav-bd-r .menu {
+	display: inline;
+	float: left
+}
+.site-nav .site-nav-bd .site-nav-bd-r {
+	display: inline;
+	float: right
+}
+.site-nav-bd,
+.site-nav-bd a {
+	color: #777
+}
+
+.site-nav-bd a:hover {
+	color: #f40;
+	text-decoration: none
+}
+.site-nav-bd .menu {
+	display: inline;
+	float: left
+}
+.site-nav-bd .menu .icon-arrow {
+	background-image: url("../img/img_ui_v612.png");
+	background-repeat: no-repeat;
+	background-position: right 16px;	
+}
+.site-nav-bd .menu .menu-hd {
+	z-index: 10002;
+	position: relative;
+	padding: 0 6px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	_display: inline;
+	_zoom: 1
+}
+.site-nav-bd .menu .menu-hd a {
+	display: inline;
+	float: left;
+	margin-right: 7px;
+	font-size: 12px;
+	color: #6c6c6c
+}
+.site-nav-bd .menu .menu-hd a:hover,
+.site-nav-bd .menu .menu-hd a:hover .iconfont {
+	color: #f40
+}
+.site-nav-bd .menu .login a {
+	color: #ff5842
+}
+
+/* ==========================================================================
+   LOGO与搜索区域
+   ========================================================================== */
+   
+.logo-search {
+	width:1200px;
+	height:43px;
+	margin:24px auto
+}
+.logo {
+	width:346px;
+	float:left
+}
+.ydb {
+	width:346px;
+	height:43px
+}
+.search-wrap input {
+    border: 0 none;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+.search-wrap .search-bd {
+    border: 1px solid #dcdcdc;
+    height: 41px;
+    width: 354px;
+	float:right
+}
+.search-form {
+	position:relative
+}
+.search-form .text {
+    background-color: #FFFFFF;
+    color: #999999;
+    font-family: arial,"宋体";
+    font-size: 14px;
+    height: 31px;
+    line-height: 31px;
+    padding: 5px 10px;
+    width: 291px;
+}
+.search-form .button {
+	position:absolute;
+	top:-1px;
+	right:-1px;
+	color: #FFFFFF;
+	width: 44px;
+	height:43px;
+	background-image: url("../img/img_ui_v616.png");
+	background-repeat: no-repeat;
+	background-position: -390px 0;
+}
+
+/* ==========================================================================
+   导航菜单区域
+   ========================================================================== */
+
+.nav-1 {
+	height: 27px;
+    margin: 0 auto;
+    width: 1200px;
+}
+.nav-1-l ul {
+	float:left;
+	width:650px;
+	height:27px;
+}
+.nav-1-l ul li {
+	display:inline-block;
+	*display:inline;
+	margin-right:70px;
+	height:27px
+}
+.nav-1 ul li a {
+	display:block;
+	height:27px;
+	background-image: url("../img/img_ui_v616.png");
+	background-repeat: no-repeat;
+	
+}
+.nav-1 ul li a:hover {
+	background-color:#efefef	
+}
+
+.shouye{width:35px;background-position:-1px -43px}
+.shouye-active{width:35px;background-position:-38px -43px}
+.quanbushangpin{width:71px;background-position:-1px -71px}
+.quanbushangpin-active{width:71px;background-position:-73px -71px}
+.kefu{width:35px;background-position:-1px -98px}
+.kefu-active{width:35px;background-position:-37px -98px}
+.qiyexinxi{width:71px;background-position:-1px -127px}
+.qiyexinxi-active{width:71px;background-position:-74px -127px}
+.lianxiwomen{width:71px;background-position:-1px -155px}
+.lianxiwomen-active{width:71px;background-position:-74px -155px}
+
+.my-jhd {
+	float:right;
+}
+.my-jhd a:hover {
+	text-decoration: none;
+}
+.m-nav {
+	margin-top: 10px;
+	margin-bottom:60px;
+	height: 47px;
+	background-image: url("../img/img_ui_v616.png");
+	background-repeat: repeat-x;
+	background-position: 0 -428px;
+	padding-top:5px
+}
+.m-nav-list ul {
+	height: 47px;
+    margin: 0 auto;
+    width: 1200px;
+}
+.m-nav-list ul li {
+	display: inline-block;
+	*display: inline;
+}
+
+.m-nav-list ul li a {
+	display: inline-block;
+	*display: inline;
+	padding: 14px 24px;
+	font-size: 14px;
+	font-weight: 800;
+	color: #fff;
+}
+.m-nav-list ul li a.active {
+	display: inline-block;
+	*display: inline;
+	padding: 14px 24px;
+	font-size: 14px;
+	font-weight: 800;
+	color: #fff;
+	background-color: #db3f2b;
+	background-image: none;
+}
+.m-nav-list ul li a:hover {
+	text-decoration: none;
+	background-color: #f0523d;
+}
+.marst-nav .pure-menu.pure-menu-open,
+.marst-nav .pure-menu.pure-menu-horizontal li .pure-menu-children {
+	background: #ff5842;
+	border: none
+}
+.marst-nav .pure-menu li a {
+	padding: 12px 20px
+}
+.marst-nav .pure-menu a,
+.marst-nav .pure-menu .pure-menu-can-have-children>li:after {
+	color: #fff
+}
+
+.marst-nav .pure-menu .pure-menu-can-have-children>li:hover:after {
+	color: #fff;
+	text-decoration: none !important
+}
+.marst-nav .pure-menu li a:hover,
+.marst-nav .pure-menu li a:focus {
+	background: #db3f2b
+}
+.marst-nav .pure-menu .pure-menu-open {
+	background: #db3f2b
+}
+
+/* ==========================================================================
+   布局代码
+   ========================================================================== */
+   
+.site-con {
+	width:1200px;
+	margin:0 auto
+}
+.side-bar {
+	width:285px;
+	float:left
+}
+.main-con {
+	width:895px;
+	float:right
+}
+
+/* ==========================================================================
+   全部商品分类 菜单样式
+   ========================================================================== */
+
+.categ {
+	width:100%
+}
+.categ h1 {
+	margin-bottom:15px;
+	background-color: #ff5842;
+	font-size: 14px;
+	color: #FFF;
+	border: solid 1px #efefef;
+	padding:11px 53px 9px
+}
+.categ h1 b {
+	background: url("../img/img_ui_v616.png") no-repeat scroll -464px -44px rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: left;
+    height: 16px;
+    margin: 1px 10px 0 0;
+    overflow: hidden;
+    width: 16px;
+}
+.mc {
+	border-left: solid #efefef 1px;
+	border-right: solid #efefef 1px;
+	border-bottom: solid #efefef 1px
+}
+.items h3 {
+    background-color: #f8f8f8;
+    border-top: 1px solid #efefef;
+    cursor: pointer;
+    font: 14px/38px 微软雅黑, Arial, Verdana ;
+    height: 38px;
+    padding: 0 7px 0 53px
+}
+.items ul {
+    border-top: 1px solid #efefef;
+}
+.items li {
+    
+}
+.items li a {
+	display:block;
+	height: 38px;
+	line-height:38px;
+    padding: 3px 15px 3px 80px;
+	color: #777;
+	text-decoration: none;
+	font: 14px/38px 微软雅黑, Arial, Verdana
+}
+.items li a:hover {
+	color: #fff;
+	background-color: #ff5842
+}
+.items b {
+    background: url("../img/img_ui_v616.png") no-repeat scroll -464px -26px rgba(0, 0, 0, 0);
+    cursor: pointer;
+    float: left;
+    height: 16px;
+    margin: 11px 10px 0 0;
+    overflow: hidden;
+    width: 16px
+}
+
+/* ==========================================================================
+   页面布局样式
+   ========================================================================== */
+
+.container{
+	margin-right:auto;
+	margin-left:auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width:1170px \9
+}
+.row{
+	margin-left:-15px;
+	margin-right:-15px
+}
+
+@media (min-width:768px){
+	.container{
+		width:750px
+	}
+
+}
+
+@media (min-width:992px){
+	.container{
+		width:970px
+	}
+
+}
+
+@media (min-width:1200px){
+	.container{
+		width:1170px
+	}
+
+}
+
+.img-responsive, 
+.thumbnail > img, 
+.thumbnail a > img, 
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+/***
+Pre-Header and pre-header elements
+***/
+
+.pre-header {
+	color: #fff;
+	border-bottom: 1px solid #ad3e2d;
+	padding-top: 10px;
+	line-height: 1.2;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	background: #d04b3a;
+}
+
+/* ==========================================================================
+   very 重要的 商品构成本分样式 页面中所有的商品展示，都用这个样式。
+   ========================================================================== */
+.item-title {
+	height: 32px;
+	margin-bottom: 20px;
+	padding-left:15px;
+	padding-right:15px;
+	background-image: url("../img/img_ui_v616.png");
+	background-position: 15px -194px;
+	background-repeat:no-repeat
+}
+.product-item {
+	padding: 2px 2px 10px;
+	background: #fff;
+	position: relative;
+	background-color:#f8f8f8;
+	border: solid #f8f8f8 2px;
+	text-align:center
+}
+.product-item:hover {
+	border: solid #ccc 2px;;
+}
+.product-item:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	line-height:0;
+}
+.product-item:hover>.pi-img-wrapper>div {
+	display: block;
+}
+.pi-img-wrapper div .btn-default {
+	padding: 3px 10px;
+	color: #fff;
+	border: 1px #fff solid;
+	margin: 0 5px;
+	background: transparent;
+	position: relative;
+	top: 50%;
+	font-size: 12px;
+}
+.product-item .btn:hover {
+	background: #e84d1c;
+	border-color: #c8c8c8;
+}
+
+.product-item h3 {
+	font: 300 14px;
+	text-transform: inherit;
+	padding-top: 10px;
+	padding-bottom: 4px;
+	text-align:center
+}
+.product-item h3 a {
+	color: #1f1f1f
+}
+.product-item h3 a:hover {
+	color: #ff5842;
+	text-decoration: none;
+}
+.pi-price {
+	color: #e84d1c;
+	font: 18px 'PT Sans Narrow', sans-serif;
+	padding-top: 1px;
+	text-align:center
+}
+.product-item .add2cart {
+	display:inline-block;
+	margin:10px auto 0;
+	color: #777;
+	border: 1px #ededed solid;
+	background-color:#e6e6e6;
+	padding: 3px 6px;
+}
+.product-item .add2cart:hover {
+	color: #fff !important;
+	background: #E84D1C !important;
+	border-color: #ff5842;
+	text-decoration: none;
+}
+.pi-img-wrapper {
+	position: relative;
+}
+.pi-img-wrapper div {
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.product-item:hover>.pi-img-wrapper>div {
+	display: block;
+}
+.pi-img-wrapper div .btn-default {
+	padding: 3px 10px;
+	color: #fff;
+	border: 1px #fff solid;
+	margin: 0 5px;
+	background: transparent;
+	position: relative;
+	top: 50%;
+	font-size: 12px;
+}
+.product-item {
+	margin-bottom: 30px;
+}

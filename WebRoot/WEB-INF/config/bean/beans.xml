@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+	<!-- 系统bean 开始 -->
+		<!-- 权限组 -->
+		<bean location="/WEB-INF/config/bean/sys/authgroup.hbm.xml" />
+		<!-- 权限组与权限的对应关系 -->
+		<bean location="/WEB-INF/config/bean/sys/authgroupmember.hbm.xml" />
+		<!-- 菜单信息(权限信息)-->
+		<bean location="/WEB-INF/config/bean/sys/authinfo.hbm.xml" />
+		<!-- 用户信息表-->
+		<bean location="/WEB-INF/config/bean/sys/userinfo.hbm.xml" />
+		<!-- 基础组织结构 -->
+		<bean location="/WEB-INF/config/bean/sys/base_organization.hbm.xml" />
+		<!-- 岗位信息 -->
+		<bean location="/WEB-INF/config/bean/sys/post_info.hbm.xml" />
+		<!-- 岗位人员 -->
+		<bean location="/WEB-INF/config/bean/sys/post_user.hbm.xml" />
+		<bean location="/WEB-INF/config/bean/sys/dataitembaseinfo.hbm.xml" />
+		
+		<!-- 系统bean 结束  -->	
+		<bean location="/WEB-INF/config/bean/sys/projectinfo.hbm.xml" />
+		<bean location="/WEB-INF/config/bean/sys/logrecord.hbm.xml" />
+</beans>

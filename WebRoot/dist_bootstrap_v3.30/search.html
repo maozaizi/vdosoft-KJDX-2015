@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="description">
+<meta content="" name="author">
+<title>按照条件查询页面</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/main-page.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+  <h2 class="page-header">条件查询</h2>
+  
+  <div class="row">
+  	<div class="col-md-4">
+    	  <div class="form-group">
+          <label for="pj_name">项目名称</label>
+          <input type="text" class="form-control" id="pj_name" placeholder="项目名称">
+        </div>
+        <div class="form-group">
+          <label for="pj_bianhao">项目编号</label>
+          <input type="text" class="form-control" id="pj_bianhao" placeholder="项目编号">
+        </div>
+        <div class="form-group">
+          <label for="">立项时间</label>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+            <input type="text" class="form-control" placeholder="起始时间">
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+            <input type="text" class="form-control" placeholder="结束时间">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pj_dkje">到款金额（万元）</label>
+          <input type="text" class="form-control" id="pj_dkje" placeholder="到款金额">
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="pj_fzrdw">负责人单位</label>
+        <input type="text" class="form-control" id="pj_fzrdw" placeholder="负责人单位">
+      </div>
+      
+      <div class="form-group">
+        <label for="pj_fzr">负责人</label>
+        <input type="text" class="form-control" id="pj_fzr" placeholder="负责人">
+      </div>
+      
+      <div class="form-group">
+        <label for="pj_cwzh">财务总号</label>
+        <input type="text" class="form-control" id="pj_cwzh" placeholder="财务总号">
+      </div>
+      
+      <div class="form-group">
+        <label for="pj_pzh">凭证号</label>
+        <input type="text" class="form-control" id="pj_pzh" placeholder="凭证号">
+      </div>
+      
+    </div>
+    
+    <div class="col-md-4">
+    	<div class="form-group">
+        <label>经费类别</label>
+        <select class="form-control">
+          <option>6</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>项目级别</label>
+        <select class="form-control">
+          <option>11国家级</option>
+          <option>12省部级</option>
+          <option>13厅局级</option>
+          <option>21省厅科研</option>
+          <option>31校级</option>
+          <option>19其他</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>计划类别</label>
+        <select class="form-control">
+          <option>01国家自然科学基金</option>
+          <option>02国家社会科学基金</option>
+          <option>03国家重点基础研究发展计划（973计划）</option>
+          <option>04国家高技术研究发展计划（863计划）</option>
+          <option>05国家重大科技专项</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>是否后续</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            否（新添加项目）
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            是（后续项目）
+          </label>
+        </div>
+        <div class="radio disabled">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+            我不知道
+          </label>
+        </div>
+      </div>
+      
+    </div>    
+  </div>
+  <button type="button" class="btn btn-default btn-lg btn-block">开始查询</button>
+  <div style="margin:20px 0">
+  	<button type="button" class="btn btn-primary">打印分配表</button>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+        <tr>
+          <th>选择</th>
+          <th>单序号</th>
+          <th>项目编号</th>
+          <th style="width:10%;">项目名称</th>
+          <th>负责人</th>
+          <th>负责人单位</th>
+          <th>项目级别</th>
+          <th>计划类别</th>
+          <th>是否后续</th>
+          <th>分配日期</th>
+          <th>到款金额（万元）</th>
+          <th>分配比例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>001</td>
+          <td>2012CXY1-10</td>
+          <td><a href="#">榆林地区煤矿动压灾害防治关键技术研究与示范榆林地区煤矿动压灾害防治关键技术研究与示范</a></td>
+          <td>来兴平</td>
+          <td>能源学院</td>
+          <td>厅局级</td>
+          <td>榆林市科技计划项目</td>
+          <td>否</td>
+          <td>2014-4-2 14:33</td>
+          <td>100</td>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>管理费</td>
+                    <td>科研费</td>
+                    <td>辅助费</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>81</td>
+                    <td>15</td>
+                </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin:0 0 20px">
+  	<button type="button" class="btn btn-primary">打印分配表</button>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping>
+    <class name="com.UserInfo" table="sys_user_info">
+        <id name="userId" type="java.lang.String">
+            <column name="user_id" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="orgId" type="java.lang.String">
+            <column name="org_id" length="40" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="30" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name" length="20" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" length="100" />
+        </property>
+        <property name="regDate" type="java.util.Date">
+            <column name="reg_date" length="19" />
+        </property>
+        <property name="lastLoginTime" type="java.util.Date">
+            <column name="last_login_time" length="19" />
+        </property>
+        <property name="loginCount" type="java.lang.Long">
+            <column name="login_count" precision="8" scale="0" />
+        </property>
+        <property name="userPwd" type="java.lang.String">
+            <column name="user_pwd" length="50" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="gender" length="1">
+                <comment>男 女</comment>
+            </column>
+        </property>
+        <property name="idcardNumber" type="java.lang.String">
+            <column name="idcard_number" length="30" />
+        </property>
+        <property name="birthdata" type="java.util.Date">
+            <column name="birth_data" length="19" />
+        </property>
+        <property name="nation" type="java.lang.String">
+            <column name="nation" length="10" />
+        </property>
+        <property name="degree" type="java.lang.String">
+            <column name="degree" length="20" />
+        </property>
+        <property name="position" type="java.lang.String">
+            <column name="position" length="40" />
+        </property>
+        <property name="professional" type="java.lang.String">
+            <column name="professional" length="40" />
+        </property>
+        <property name="isValid" type="java.lang.String">
+            <column name="is_valid" length="1">
+                <comment>0 无效 1 有效</comment>
+            </column>
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="create_date" length="19" />
+        </property>
+        <property name="createuser" type="java.lang.String">
+            <column name="create_user" length="40" />
+        </property>
+        <property name="modifyUser" type="java.lang.String">
+            <column name="modify_user" length="40" />
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date" length="19" />
+        </property>
+		<property name="postId" type="java.lang.String" fieldtype="view">
+            <column name="post_id"/>
+        </property>
+        <property name="postUserId" type="java.lang.String" fieldtype="view">
+            <column name="post_user_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

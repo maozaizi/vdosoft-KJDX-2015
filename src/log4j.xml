@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d - %c -%-4r [%t] %-5p %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelMatchFilter">
+			<param name="levelToMatch" value="APP" />
+		</filter>
+	</appender>
+	<!-- <appender name="DB" class="org.apache.log4j.jdbc.JDBCAppender">
+		<param name="URL"
+			value="jdbc:oracle:thin:@192.168.1.199:1521:orcl" />
+		<param name="driver" value="oracle.jdbc.driver.OracleDriver" />
+		<param name="user" value="wsdd" />
+		<param name="password" value="123456" />
+		<param name="BufferSize" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="INSERT INTO SYS_LOG(ID,USERA,AREALNAME,BREALNAME,USERB,OPTTIME,LOGTIME,OPTSITE,EVENTTYPE,LOGLEVEL,CLASSNAME,METHODNAME,MSG,IP,SOURURL,DESTURL,URL,EXPAND1,EXPAND2,EXPAND3,EXPAND4,EXPAND5)VALUES(sys_guid(),'%X{USERA}','%X{AREALNAME}','%X{BREALNAME}','%X{USERB}',to_date('%X{OPTTIME}','yyyy-mm-dd hh24:mi:ss') ,sysdate,'%X{OPTSITE}','%X{EVENTTYPE}','%p','%C','%M','%m','%X{IP}','%X{SOURURL}','%X{DESTURL}','%X{URL}','%X{EXPAND1}','%X{EXPAND2}','%X{EXPAND3}','%X{EXPAND4}','%X{EXPAND5}')" />
+		</layout>
+		<filter class="com.fnzn.log4j.AppLogFilter">
+			<param name="LevelMax" value="20050" />
+			<param name="LevelMin" value="20050" />
+			<param name="acceptOnMatch" value="true" />
+		</filter>
+	</appender> -->
+	<appender name="runxj359File"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="logs/xj359.html" /><!-- 设置日志输出文件名 -->
+		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
+		<param name="Append" value="false" />
+		<param name="maxFileSize" value="1024KB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="com.u2a.framework.util.FormatHTMLLayout" />
+	</appender>
+	<appender name="logxj359File"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/xj359_" /><!-- 设置日志输出文件名 -->
+		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="yyyy-MM-dd'.html'" />
+		<layout class="com.u2a.framework.util.FormatHTMLLayout" />
+	</appender>
+	<root>
+		<priority value="info,error" />
+		<appender-ref ref="CONSOLE" />
+		<!-- <appender-ref ref="DB" /> -->
+		<appender-ref ref="runxj359File" />
+		<appender-ref ref="logxj359File" />
+	</root>
+</log4j:configuration>

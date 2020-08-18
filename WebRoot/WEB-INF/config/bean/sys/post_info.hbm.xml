@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping>
+    <class name="com.PostInfo" table="sys_post_info">
+        <id name="postId" type="java.lang.String">
+            <column name="post_id" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="orgId" type="java.lang.String">
+            <column name="org_id" length="40" />
+        </property>
+        <property name="postCode" type="java.lang.String">
+            <column name="post_code" length="40" />
+        </property>
+        <property name="postName" type="java.lang.String">
+            <column name="post_name" length="40" />
+        </property>
+        <property name="associationRole" type="java.lang.String">
+            <column name="association_role" length="40" />
+        </property>
+        <property name="postDuties" type="java.lang.String">
+            <column name="post_duties" length="200" />
+        </property>
+        <property name="isValid" type="java.lang.String">
+            <column name="is_valid" length="1" />
+        </property>
+        <property name="orderby" type="java.lang.Integer">
+            <column name="orderby" />
+        </property>
+        <property name="createUser" type="java.lang.String">
+            <column name="create_user" length="40" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="create_date" length="19" />
+        </property>
+        <property name="modifyUser" type="java.lang.String">
+            <column name="modify_user" length="40" />
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

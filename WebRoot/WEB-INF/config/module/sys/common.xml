@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<package name="wsddCommon">
+		
+		<!-- 客户管理 -->
+		<method name="getLogRecord"
+			realclass="com.u2a.wsdd.common.CommonWsddService"
+			dbName="brickDao" trans="" limit="" methodname="getLogRecord"
+			source="" dest="jsp/wsdd/ht/common/logRecord.jsp"
+			type="1">
+			<inparams>
+			   <inparam name="request" type="Context" check="0" source="App.Request" />
+				<inparam name="currentPageNO" real="currentPageNO"
+					type="String" check="0" source="param" default="1" />
+				<inparam name="perCount" real="perCount" type="String"
+					check="0" source="param" default="10" />
+		    </inparams>
+		    <outparams>
+		      	<outparam name="page" type="LOGIC" source="attr" />
+		    </outparams>
+		</method>
+		
+		<!-- 后台首页展示 -->
+		<method name="toPageRight"
+			realclass="com.u2a.wsdd.common.CommonWsddService"
+			dbName="brickDao" trans="" limit="" methodname="intoPiebasic"
+			source="" dest="right.jsp"
+			type="1">
+			<inparams>
+				<inparam name="request" type="Context" check="0" source="App.Request" />
+				<inparam name="orderState"  type="String" check="0" source="param"/>
+		    </inparams>
+		    <outparams>
+		       <outparam name="data" type="String" check="0" source="param"/>
+		       <outparam name="piebasic" type="LOGIC" source="attr" />
+		       <outparam name="orderList" type="LOGIC" source="attr" />
+		    </outparams>
+		</method>
+		
+		<!-- 跳转功能开关设置 -->
+		<method name="getConfiguration"
+			realclass="com.u2a.wsdd.common.CommonWsddService"
+			dbName="brickDao" trans="" limit="" methodname="getConfiguration"
+			source="" dest="jsp/wsdd/ht/common/configuration.jsp"
+			type="1">
+			<inparams>
+		    </inparams>
+		    <outparams>
+		       <outparam name="configuration" type="LOGIC" source="attr" />
+		    </outparams>
+		</method>
+		
+		<!-- 功能开关设置 -->
+		<method name="updateConfiguration"
+			realclass="com.u2a.wsdd.common.CommonWsddService"
+			dbName="brickDao" trans="" limit="" methodname="updateConfiguration"
+			source="" dest="jsp/wsdd/ht/common/configuration.jsp"
+			type="1">
+			<inparams>
+				<inparam name="configuration" type="LOGIC" classname="com.configuration" source="param">
+					<inparam name="configurationId" type="String" check="0" source="param" remark=""/>
+					<inparam name="isValid" type="String" check="0" source="param" remark=""/>
+				</inparam>
+				<inparam name="url" type="String" check="0" source="param" remark="重定向路径"/>
+				<inparam name="userMap" real="userMap"   type="ENTITY" check="0" source="session" />
+		    </inparams>
+		    <outparams>
+		    </outparams>
+		</method>
+	</package>
+</root>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping>
+    <class name="com.projectInfo" table="project_info">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="projectsort" type="java.lang.String">
+            <column name="projectsort" length="40" />
+        </property>
+        <property name="projectname" type="java.lang.String">
+            <column name="projectname" length="30" />
+        </property>
+        <property name="projectcode" type="java.lang.String">
+            <column name="projectcode" length="20" />
+        </property>
+        <property name="college" type="java.lang.String">
+            <column name="college" length="100" />
+        </property>
+        <property name="allotdate" type="java.util.Date">
+            <column name="allotdate" length="19" />
+        </property>
+        <property name="builddate" type="java.lang.String">
+            <column name="builddate" length="19" />
+        </property>
+        <property name="feeType" type="java.lang.String">
+            <column name="feeType" length="19" />
+        </property>
+        <property name="dutyperson" type="java.lang.String">
+            <column name="dutyperson" length="50" />
+        </property>
+        <property name="pgmember" type="java.lang.String">
+            <column name="pgmember" length="30" />
+        </property>
+        <property name="projectlevel" type="java.lang.String">
+            <column name="projectlevel" length="10" />
+        </property>
+        <property name="projectlevelid" type="java.lang.String">
+            <column name="projectlevelid" length="10" />
+        </property>
+        <property name="plantype" type="java.lang.String">
+            <column name="plantype" length="20" />
+        </property>
+        <property name="plantypeid" type="java.lang.String">
+            <column name="plantypeid" length="20" />
+        </property>
+        <property name="othertype" type="java.lang.String">
+            <column name="othertype" length="20" />
+        </property>
+        <property name="isother" type="java.lang.String">
+            <column name="isother" length="1">
+                <comment>0 否 1 是</comment>
+            </column>
+        </property>
+        <property name="isfollow" type="java.lang.String">
+            <column name="isfollow" length="1">
+                <comment>0 否 1 是</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="amount" length="40" />
+        </property>
+        <property name="managefee" type="java.lang.Double">
+            <column name="managefee" length="40" />
+        </property>
+        <property name="keyanfee" type="java.lang.Double">
+            <column name="keyanfee" length="40" />
+        </property>
+        <property name="fuzhufee" type="java.lang.Double">
+            <column name="fuzhufee" length="40" />
+        </property>
+        <property name="fintotal" type="java.lang.String">
+            <column name="fintotal" length="40" />
+        </property>
+        <property name="pzNo" type="java.lang.String">
+            <column name="pzNo" length="40" />
+        </property>
+        <property name="inYear" type="java.lang.String">
+            <column name="inYear" length="40" />
+        </property>
+        <property name="xuhao" type="java.lang.String">
+            <column name="xuhao" length="40" />
+        </property>
+        <property name="isValid" type="java.lang.String">
+            <column name="is_valid" length="1">
+                <comment>0 无效 1 有效</comment>
+            </column>
+        </property>
+        <property name="istemp" type="java.lang.String">
+            <column name="istemp" length="1">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="create_date" length="19" />
+        </property>
+        <property name="createuser" type="java.lang.String">
+            <column name="create_user" length="40" />
+        </property>
+        <property name="modifyUser" type="java.lang.String">
+            <column name="modify_user" length="40" />
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

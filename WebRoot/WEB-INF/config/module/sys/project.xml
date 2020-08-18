@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<package name="project">
+		<method name="list" realclass="com.u2a.framework.service.business.ProjectService" dbName="brickDao" trans="" limit=""	methodname="getList" source="aa" dest="jsp/business/project/list.jsp" error="" type="2">
+			<inparams>
+				<inparam name="currentPageNO" real="currentPageNO"
+					type="String" check="0" source="param" default="1" />
+				<inparam name="perCount" real="perCount" type="String"
+					check="0" source="param" default="100" />
+				<inparam name="request" type="Context" check="0" source="App.Request" />
+				<inparam name="projectname" type="String" check="0" source="param"/>
+				<inparam name="projectcode" type="String" check="0" source="param"/>
+				<inparam name="builddate" type="String" check="0" source="param"/>
+				<inparam name="college" type="String" check="0" source="param"/>
+				<inparam name="dutyperson" type="String" check="0" source="param"/>
+				<inparam name="feeType" type="String" check="0" source="param"/>
+				<inparam name="samount" type="String" check="0" source="param"/>
+				<inparam name="eamount" type="String" check="0" source="param"/>
+				<inparam name="pzNo" type="String" check="0" source="param"/>
+				<inparam name="projectLevel" type="String" check="0" source="param"/>
+				<inparam name="planType" type="String" check="0" source="param"/>
+				<inparam name="fintotal" type="String" check="0" source="param"/>
+				<inparam name="othertype" type="String" check="0" source="param"/>
+				<inparam name="isFollow" type="String" check="0" source="param"/>
+				<inparam name="starttime" type="String" check="0" source="param"/>
+				<inparam name="endtime" type="String" check="0" source="param"/>
+			</inparams>
+			<outparams>
+				<outparam name="page" type="LOGIC" source="attr" />
+				<outparam name="planTypeList" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+		<method name="toAdd"
+			realclass="com.u2a.framework.service.SysService" 
+			methodname="toPage" dest="jsp/business/project/add.jsp">
+			<inparams></inparams>
+			<outparams></outparams>
+		</method>
+		<method name="toimportProject"
+			realclass="com.u2a.framework.service.SysService" 
+			methodname="toPage" dest="jsp/business/project/import.jsp">
+			<inparams></inparams>
+			<outparams></outparams>
+		</method>
+		<method name="toimportHisProject"
+			realclass="com.u2a.framework.service.SysService" 
+			methodname="toPage" dest="jsp/business/project/importhistory.jsp">
+			<inparams></inparams>
+			<outparams></outparams>
+		</method>
+		
+		<method name="getPlanTypeList" realclass="com.u2a.framework.service.business.ProjectService" dbName="brickDao" trans="" limit=""	methodname="getPlanTypeList" source="aa" dest="" error="" type="2">
+			<inparams>
+				<inparam name="dataItemId"  type="String"
+					check="0" source="param"/>
+			</inparams>
+			<outparams>
+				<outparam name="planTypeList" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+		
+		<method name="addProject" realclass="com.u2a.framework.service.business.ProjectService" dbName="brickDao" trans="" limit=""	methodname="addProject" source="aa" dest="" error="" type="2">
+			<inparams>
+				<inparam name="project" type="LOGIC"
+					classname="com.projectInfo" source="param">
+					<inparam name="projectname" type="String" check="0" source="param"/>
+					<inparam name="projectcode" type="String" check="0" source="param"/>
+					<inparam name="builddate" type="String" check="0" source="param"/>
+					<inparam name="college" type="String" check="0" source="param"/>
+					<inparam name="dutyperson" type="String" check="0" source="param"/>
+					<inparam name="feeType" type="String" check="0" source="param"/>
+					<inparam name="amount" type="String" check="0" source="param"/>
+					<inparam name="managefee" type="String" check="0" source="param"/>
+					<inparam name="keyanfee" type="String" check="0" source="param"/>
+					<inparam name="fuzhufee" type="String" check="0" source="param"/>
+					<inparam name="pzNo" type="String" check="0" source="param"/>
+					<inparam name="othertype" type="String" check="0" source="param"/>
+					<inparam name="isother" type="String" check="0" source="param"/>
+					<inparam name="istemp" type="String" check="0" default="0" source="param"/>
+				</inparam>
+					<inparam name="projectLevel" type="String" check="0" source="param"/>
+					<inparam name="planType" type="String" check="0" source="param"/>
+					<inparam name="url" type="String" check="0" source="param"/>
+					<inparam name="userMap" real="userMap" type="ENTITY" check="0" source="session" />
+			</inparams>
+			<outparams>
+			</outparams>
+		</method>
+		
+		<method name="deleteProject"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="deleteProject" dest="">
+			<inparams>
+			     <inparam name="pid" type="String" check="0" source="param" remark="" />
+			     <inparam name="url" type="String" check="0" source="param"/>
+			     <inparam name="userMap" real="userMap" type="ENTITY" check="0" source="session" />
+			</inparams>
+            <outparams>
+			</outparams>
+        </method>
+        
+        <method name="toupdateProject"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="toupdateProject" dest="jsp/business/project/update.jsp">
+			<inparams>
+			     <inparam name="pid" type="String" check="0" source="param" remark="" />
+			</inparams>
+            <outparams>
+            	<outparam name="project" type="LOGIC" source="attr" />
+            	<outparam name="planTypeList" type="LOGIC" source="attr" />
+            	<outparam name="p2" type="String" source="attr" />
+			</outparams>
+        </method>
+        
+        <method name="updateProject" realclass="com.u2a.framework.service.business.ProjectService" dbName="brickDao" trans="" limit=""	methodname="updateProject" source="aa" dest="" error="" type="2">
+			<inparams>
+				<inparam name="project" type="LOGIC"
+					classname="com.projectInfo" source="param">
+					<inparam name="id" type="String" check="0" source="param"/>
+					<inparam name="projectname" type="String" check="0" source="param"/>
+					<inparam name="projectcode" type="String" check="0" source="param"/>
+					<inparam name="builddate" type="String" check="0" source="param"/>
+					<inparam name="college" type="String" check="0" source="param"/>
+					<inparam name="dutyperson" type="String" check="0" source="param"/>
+					<inparam name="feeType" type="String" check="0" source="param"/>
+					<inparam name="amount" type="String" check="0" source="param"/>
+					<inparam name="managefee" type="String" check="0" source="param"/>
+					<inparam name="keyanfee" type="String" check="0" source="param"/>
+					<inparam name="fuzhufee" type="String" check="0" source="param"/>
+					<inparam name="pzNo" type="String" check="0" source="param"/>
+					<inparam name="othertype" type="String" check="0" source="param"/>
+					<inparam name="isother" type="String" check="0" source="param"/>
+				</inparam>
+					<inparam name="projectLevel" type="String" check="0" source="param"/>
+					<inparam name="planType" type="String" check="0" source="param"/>
+					<inparam name="url" type="String" check="0" source="param"/>
+					<inparam name="userMap" real="userMap" type="ENTITY" check="0" source="session" />
+			</inparams>
+			<outparams>
+			</outparams>
+		</method>
+        
+        <method name="saveProjects"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="saveProjects"
+			source="" dest=""
+			type="2">
+			<inparams>
+				<inparam name="userMap" real="userMap" type="ENTITY" check="0" source="session" />
+				<inparam name="request" real="request" type="Context" check="0" source="App.Request"/>
+				<inparam name="fileUrl" real="fileUrl" type="String" check="0" source="param" />
+			</inparams>
+			<outparams>
+				<outparam name="message" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+		
+		 <method name="saveHistoryProjects"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="saveHistoryProjects"
+			source="" dest=""
+			type="2">
+			<inparams>
+				<inparam name="userMap" real="userMap" type="ENTITY" check="0" source="session" />
+				<inparam name="request" real="request" type="Context" check="0" source="App.Request"/>
+				<inparam name="fileUrl" real="fileUrl" type="String" check="0" source="param" />
+			</inparams>
+			<outparams>
+				<outparam name="message" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+		
+		 <method name="viewProject"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="viewProject"
+			source="" dest="jsp/business/project/view.jsp"
+			type="2">
+			<inparams>
+				<inparam name="id" real="id" type="String" check="0" source="param" />
+				<inparam name="projectname" type="String" check="0" source="param"/>
+				<inparam name="projectcode" type="String" check="0" source="param"/>
+				<inparam name="builddate" type="String" check="0" source="param"/>
+				<inparam name="college" type="String" check="0" source="param"/>
+				<inparam name="dutyperson" type="String" check="0" source="param"/>
+				<inparam name="feeType" type="String" check="0" source="param"/>
+				<inparam name="samount" type="String" check="0" source="param"/>
+				<inparam name="eamount" type="String" check="0" source="param"/>
+				<inparam name="pzNo" type="String" check="0" source="param"/>
+				<inparam name="projectLevel" type="String" check="0" source="param"/>
+				<inparam name="planType" type="String" check="0" source="param"/>
+				<inparam name="fintotal" type="String" check="0" source="param"/>
+				<inparam name="othertype" type="String" check="0" source="param"/>
+				<inparam name="isFollow" type="String" check="0" source="param"/>
+				<inparam name="starttime" type="String" check="0" source="param"/>
+				<inparam name="endtime" type="String" check="0" source="param"/>
+			</inparams>
+			<outparams>
+				<outparam name="project" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+		
+		 <method name="viewHistory"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="viewHistory"
+			source="" dest="jsp/business/project/viewHistory.jsp"
+			type="2">
+			<inparams>
+				<inparam name="projectcode" real="projectcode" type="String" check="0" source="param" />
+			</inparams>
+			<outparams>
+				<outparam name="projectList" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+		
+		<method name="exportProject"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="exportProject"
+			source="" dest=""
+			type="2">
+			<inparams>
+				<inparam name="request" type="Context" check="0"
+					source="App.Request" />
+				<inparam name="response" type="Context" check="0"
+					source="App.Response" />
+				<inparam name="serlvetContext" real="serlvetContext"
+					type="Context" check="0" source="App.Context" />
+				<inparam name="session" real="session" type="Context"
+					check="0" source="App.Session" />
+				<inparam name="projectid" real="projectid" type="Array" check="0" source="param" />
+				<inparam name="issign" real="issign" type="String" check="0" source="param" />
+			</inparams>
+			<outparams>
+			</outparams>
+		</method>
+		
+		<method name="exportExcelProject"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="exportExcelProject"
+			source="" dest=""
+			type="2">
+			<inparams>
+				<inparam name="request" type="Context" check="0"
+					source="App.Request" />
+				<inparam name="response" type="Context" check="0"
+					source="App.Response" />
+				<inparam name="serlvetContext" real="serlvetContext"
+					type="Context" check="0" source="App.Context" />
+				<inparam name="session" real="session" type="Context"
+					check="0" source="App.Session" />
+				<inparam name="projectname" type="String" check="0" source="param"/>
+				<inparam name="projectcode" type="String" check="0" source="param"/>
+				<inparam name="builddate" type="String" check="0" source="param"/>
+				<inparam name="college" type="String" check="0" source="param"/>
+				<inparam name="dutyperson" type="String" check="0" source="param"/>
+				<inparam name="feeType" type="String" check="0" source="param"/>
+				<inparam name="samount" type="String" check="0" source="param"/>
+				<inparam name="eamount" type="String" check="0" source="param"/>
+				<inparam name="pzNo" type="String" check="0" source="param"/>
+				<inparam name="projectLevel" type="String" check="0" source="param"/>
+				<inparam name="planType" type="String" check="0" source="param"/>
+				<inparam name="fintotal" type="String" check="0" source="param"/>
+				<inparam name="othertype" type="String" check="0" source="param"/>
+				<inparam name="isFollow" type="String" check="0" source="param"/>
+				<inparam name="starttime" type="String" check="0" source="param"/>
+				<inparam name="endtime" type="String" check="0" source="param"/>
+			</inparams>
+			<outparams>
+			</outparams>
+		</method>
+		
+		 <method name="toViewHistory"
+			realclass="com.u2a.framework.service.business.ProjectService"
+			dbName="brickDao" trans="" limit="" methodname="toViewHistory"
+			source="" dest="jsp/business/project/operationloglist.jsp"
+			type="2">
+			<inparams>
+				<inparam name="currentPageNO" real="currentPageNO"
+					type="String" check="0" source="param" default="1" />
+				<inparam name="perCount" real="perCount" type="String"
+					check="0" source="param" default="10" />
+				<inparam name="request" type="Context" check="0" source="App.Request" />
+			</inparams>
+			<outparams>
+				<outparam name="page" type="LOGIC" source="attr" />
+			</outparams>
+		</method>
+	</package>
+	
+	
+</root>

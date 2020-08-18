@@ -1,0 +1,36 @@
+/* =========================================================== */
+/* Common /* 
+============================================================== */
+
+.container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container {
+	max-width:940px;
+}
+
+body.boxed {	
+	background-image: url('../../img/bg/wp2.jpg');
+	background-attachment: fixed;
+	background-position: 49% 50%;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+	padding: 10% 0 10%
+}
+
+body.boxed .jumbotron {
+	-moz-box-shadow:0 0 14px rgba(0,0,0,0.72);
+	-webkit-box-shadow:0 0 14px rgba(0,0,0,0.72);
+	box-shadow:0 0 14px rgba(0,0,0,0.72);
+	background-color:#FFFFFF;
+	margin:0px auto;
+	max-width:100%;
+	width:1040px;
+	font-size:13px;
+	color:#555;
+	line-height:24px;
+	z-index:0;
+	position:relative;
+	border-top:5px solid #e8b76a;
+}
